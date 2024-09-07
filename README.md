@@ -1,5 +1,5 @@
-# Stat 359 Winter 2024
-Stat 359 course materials
+# Stat 360 -- Introduction to Generative AI Winter 2025
+Stat 360 course materials
 
 
 
