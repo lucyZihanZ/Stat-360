@@ -39,5 +39,5 @@ Lecture notes can be found on the course Canvas website.
 |--------------------------------|---------------|-------------------------|
 |   Assignment 1       | Jan 9   | Jan 23  |
 |     Assignment 2      |  Jan 28   | Feb 11  |
-| Final presentation topic proposals |       |  Feb 18   | 
+| Final presentation topic proposals |       |  Feb 25   | 
 |  Final presentations        |       | Mar 6 - Mar 14  |
