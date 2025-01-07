@@ -35,6 +35,9 @@ Lecture notes can be found on the course Canvas website.
 
 | Project title                  | Date released | Due date                
 |--------------------------------|---------------|-------------------------|
-|   Assignment 1       | Jan 9   | Jan 23  |
-|     Assignment 2      |  Jan 28   | Feb 11  |
+|   Assignment 1       | TBD   | TBD  |
+|     Assignment 2      |  TBD   |TBD  |
+|     Assignment 3      |  TBD   |TBD  |
+|     Assignment 4      |  TBD   |TBD  |
+|     Assignment 5      |  TBD   |TBD  |
 |  Take-home final exam      |       | Due Friday, March 7th  |
