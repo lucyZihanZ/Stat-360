@@ -27,9 +27,7 @@ Lecture notes can be found on the course Canvas website.
 | Week 8 Tuesday|  February 25| Stable Diffusion, tuning stable diffusion, Diffusion models, DDPM, classifier-free guidance  | [Stable Diffusion](https://en.wikipedia.org/wiki/Stable_Diffusion), [Illustrated Stable Diffusion](https://jalammar.github.io/illustrated-stable-diffusion/), [Understanding Stable Diffusion](https://scholar.harvard.edu/binxuw/classes/machine-learning-scratch/materials/stable-diffusion-scratch) [Diffusion](https://lilianweng.github.io/posts/2021-07-11-diffusion-models/), [DDPM](https://arxiv.org/abs/2006.11239), [Diffusion as SDEs](https://arxiv.org/abs/2011.13456), [Classifier Free Guidance](https://sander.ai/2022/05/26/guidance.html), [Diffusion code](https://github.com/huggingface/diffusion-models-class/blob/main/unit1/01_introduction_to_diffusers.ipynb), [More low level code](https://github.com/acids-ircam/diffusion_models/blob/main/diffusion_03_waveform.ipynb) |
 | Week 8 Thursday|  February 27| Frontiers, using LLMs to help diffusion models by planning out images. Instance recognition and inserting new objects %s tricks. Consistency models, SD Edit,  Diffusion in robotics.           | | 
 | Week 9, Tuesday  |  March 4| Life is Worse with LLMs |  |
-| Week 9, Thursday   |  March 6| Presentations  |  |
-| Week 10, Tuesday  |  March 11| Presentations  |  |
-| Week 10, Thursday  |  March 14| Presentations  |  |
+| Week 9, Thursday   |  March 6| Take-home final exam office hours  |  |
 
 
 # Homeworks and Due Dates
@@ -39,5 +37,4 @@ Lecture notes can be found on the course Canvas website.
 |--------------------------------|---------------|-------------------------|
 |   Assignment 1       | Jan 9   | Jan 23  |
 |     Assignment 2      |  Jan 28   | Feb 11  |
-| Final presentation topic proposals |       |  Feb 25   | 
-|  Final presentations        |       | Mar 6 - Mar 14  |
+|  Take-home final exam      |       | Due Friday, March 7th  |
