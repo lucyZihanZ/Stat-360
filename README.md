@@ -39,5 +39,5 @@ Lecture notes can be found on the course Canvas website.
 |     Assignment 2: Prompt Tuning      |  Jan 22   |Jan 30  |
 |     Assignment 3: SFT      |  Jan 31   |Feb 11  |
 |     Assignment 4: RLHF      |  Feb 12   |Feb 21  |
-|     Assignment 5: RAG      |  Feb 21   |Feb 28  |
-|  Take-home final exam      |    Feb 28   | Due Friday, March 7th  |
+|     Assignment 5: RAG      |  Feb 21   |March 4  |
+|  Take-home final exam      |    March 5   | Due Friday, March 7th  |
