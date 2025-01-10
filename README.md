@@ -1,3 +1,6 @@
+# Jan 10
+Copy of Professor Stadie's work
+
 # Stat 360 -- Introduction to Generative AI Winter 2025
 Stat 360 course materials
 
