@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Wise Animal Sound Predictor</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 2000px;
+            margin: 0 auto;
+            padding: 20px;
+            text-align: center;
+        }
+        .wise-man {
+            width: 800px;
+            height: auto;
+            margin: 20px 0;
+            border-radius: 10px;
+        }
+        .input-box {
+            width: 300px;
+            padding: 10px;
+            font-size: 16px;
+            margin: 10px;
+        }
+        .go-button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .predictions {
+            margin-top: 20px;
+            padding: 20px;
+            background-color: #f5f5f5;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>The Wise Animal Sound Predictor</h1>
+    <img src="{{ url_for('static', filename='smart_man.png') }}" class="wise-man" alt="Wise Man">
+    <div>
+        <input type="text" id="prompt" class="input-box" placeholder="Enter prompt (e.g., 'the cow says')">
+        <button onclick="generatePrediction()" class="go-button">Ask the Wise One</button>
+    </div>
+    <div id="result" class="predictions"></div>
+
+    <script>
+        function generatePrediction() {
+            const prompt = document.getElementById('prompt').value;
+            fetch('/generate', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({prompt: prompt})
+            })
+            .then(response => response.json())
+            .then(data => {
+                let resultHtml = '<h3>The wise one predicts:</h3>';
+                data.predictions.forEach(pred => {
+                    resultHtml += `<p>${pred.word}: ${pred.score}</p>`;
+                });
+                document.getElementById('result').innerHTML = resultHtml;
+            });
+        }
+    </script>
+</body>
+</html>
