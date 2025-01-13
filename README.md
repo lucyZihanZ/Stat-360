@@ -1,7 +1,13 @@
 # Stat 360 -- Introduction to Generative AI Winter 2025
 Stat 360 course materials
 
+# Office Hours
 
+| Project title                  | Time | Location              
+|--------------------------------|---------------|-------------------------|
+| Ryan Chen (TA) | Thursdays 3-4pm    | Zoom: https://northwestern.zoom.us/j/3082623966  | 
+|  Professor Stadie        |  Wednesdays 5:45-6:15pm   |  Zoom: https://northwestern.zoom.us/j/3799597115 
+ |
 
 # Course Lectures 
 
