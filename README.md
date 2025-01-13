@@ -6,8 +6,7 @@ Stat 360 course materials
 | Project title                  | Time | Location              
 |--------------------------------|---------------|-------------------------|
 | Ryan Chen (TA) | Thursdays 3-4pm    | Zoom: https://northwestern.zoom.us/j/3082623966  | 
-|  Professor Stadie        |  Wednesdays 5:45-6:15pm   |  Zoom: https://northwestern.zoom.us/j/3799597115 
- |
+|  Professor Stadie        |  Wednesdays 5:45-6:15pm   |  Zoom: https://northwestern.zoom.us/j/3799597115 |
 
 # Course Lectures 
 
