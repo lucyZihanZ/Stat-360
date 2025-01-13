@@ -55,3 +55,18 @@ class AnimalSoundDataset(Dataset):
             "the duck says",
             "the pig says",
         ]
+
+if __name__ == "__main__":
+    # Create dataset instance
+    dataset = AnimalSoundDataset()
+    
+    # Print vocabulary for inspection
+    print("Vocabulary:", dataset.vocab)
+    
+    # Test with first sequence
+    test_sequence = dataset.sequences[0]  # "the cow says moo"
+    tokens = dataset[0]  # Get tokenized and padded sequence
+    
+    print("\nTest sequence:", test_sequence)
+    print("Tokenized:", tokens)
+    print("Decoded:", [dataset.vocab[idx] for idx in tokens])
