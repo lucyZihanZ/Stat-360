@@ -291,16 +291,40 @@ def test_transformer():
     model.eval()
     with torch.no_grad():
         for prompt in test_prompts:
-            x = encode(prompt).unsqueeze(0)  # Add batch dimension
+            # encode() returns shape: (seq_len,)
+            # But our model expects: (batch_size, seq_len)
+            # unsqueeze(0) adds a dimension at position 0, making it: (1, seq_len)
+            # This is necessary because neural networks process data in batches
+            # Even when we have just one sample, we need a batch dimension!
+            x = encode(prompt).unsqueeze(0)  # Shape: (1, seq_len)
             
             # Generate two tokens
             for _ in range(2):
+                # model(x) returns shape: (batch_size, seq_len, vocab_size)
                 logits = model(x)
+                
+                # We only want the predictions for the last position
+                # logits[0]: Select first (and only) item in batch
+                # logits[0, -1]: Get the last position in the sequence
+                # Shape: (vocab_size,) - a vector of scores for each possible next word
                 last_token_logits = logits[0, -1]
+                
+                # Get top 5 most likely next tokens
+                # top_k.values: tensor of the 5 highest scores
+                # top_k.indices: tensor of the 5 corresponding token indices
                 top_k = torch.topk(last_token_logits, k=5)
                 
-                # Get most likely next token
+                # Take the most likely token (index 0 of top_k)
+                # Shape: (1,)
                 next_token_idx = top_k.indices[0]
+                
+                # We need to add this token to our input sequence
+                # 1. unsqueeze(0): Add batch dim -> (1, 1)
+                # 2. unsqueeze(0): Add sequence dim -> (1, 1)
+                # 3. cat(..., dim=1): Concatenate along sequence dimension
+                # Before cat: x shape is (1, current_seq_len)
+                # After cat: x shape is (1, current_seq_len + 1)
+                # because we're adding a new token to the end of the sequence
                 x = torch.cat([x, next_token_idx.unsqueeze(0).unsqueeze(0)], dim=1)
             
             # Print results
