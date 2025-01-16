@@ -129,11 +129,12 @@ class MultiHeadAttention(nn.Module):
         # Input shape:  (batch, seq_len, d_model)
         # Output shape: (batch, seq_len, d_model)
         # The d_model dimension is later reshaped into (n_heads, head_size)
+        # torch defines mathematically linear transformation, and weight, 
         self.q_proj = nn.Linear(self.d_model, self.d_model)  # Query projection
         self.k_proj = nn.Linear(self.d_model, self.d_model)  # Key projection
         self.v_proj = nn.Linear(self.d_model, self.d_model)  # Value projection
         self.out_proj = nn.Linear(self.d_model, self.d_model)  # Final output projection
-        
+# define the algebra in the nn.Linear, pass x into the proj.
     def forward(self, x):
         B, T, D = x.shape
         H = self.n_heads
@@ -157,6 +158,7 @@ class MultiHeadAttention(nn.Module):
         #
         # By transposing k, each query vector will dot product with all key vectors,
         # giving us attention scores between every query position and every key position
+        # deal with different heads together, transpose:swap the dimension.
         k_for_matmul = k.transpose(-2, -1)  # (Batch, n_heads, head_size, Time_k)
         
         # Now each query will compute attention scores with all keys
