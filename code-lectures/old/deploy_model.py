@@ -5,6 +5,8 @@ import sentencepiece
 from peft import PeftModel, PeftConfig
 from transformers import StoppingCriteria, StoppingCriteriaList
 
+
+# hahahhahahha
 def get_sampler_params(version='v1'):
     if version == 'v1':
         params = {
