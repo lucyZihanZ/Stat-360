@@ -35,7 +35,7 @@ def train():
         head_size=8,
         n_heads=4
     ).to(device)
-    
+    # updates the weights and bias during the training of the loss function.
     optimizer = torch.optim.AdamW(
         model.parameters(),
         lr=1e-3,
@@ -78,7 +78,7 @@ def train():
             optimizer.zero_grad(set_to_none=True)  # Slightly more efficient
             loss.backward()
             optimizer.step()
-            
+    # optimizer shows the distance between the right.
             total_loss += loss.item()
             
         # Move evaluation to epoch level
@@ -112,6 +112,7 @@ def generate_sample(model, dataset, prompt, max_new_tokens=2):
         max_new_tokens: How many tokens to generate (default 2 for "woof woof" cases)
     """
     # Convert prompt string to tensor of indices
+    # grab token, 
     tokens = prompt.split()
     x = torch.tensor([dataset.word2idx[w] for w in tokens]).unsqueeze(0)  # Add batch dim
     
@@ -132,7 +133,7 @@ def generate_sample(model, dataset, prompt, max_new_tokens=2):
             next_token_idx = top_k.indices[0]
             x = torch.cat([x, next_token_idx.unsqueeze(0).unsqueeze(0)], dim=1)
         
-        # Print results
+        # Print results, token back to the vocab
         print(f"\nPrompt: {prompt}")
         print("Generated:", end=" ")
         for idx in x[0, len(tokens):]:  # Skip prompt tokens

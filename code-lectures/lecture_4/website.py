@@ -12,19 +12,20 @@ model = TinyTransformer(
     head_size=8,
     n_heads=4
 )
-model.load_state_dict(torch.load('best_model.pt'))
+model.load_state_dict(torch.load('best_model.pt')) # what we saved
 model.eval()
 
 @app.route('/')
 def home():
     return render_template('index.html')
-
+# run the model, and generate the model
 @app.route('/generate', methods=['POST'])
 def generate():
     # Convert prompt to lowercase before processing
     prompt = request.json['prompt'].lower()
     
     # Convert prompt to tensor
+# token the users' input
     tokens = prompt.split()
     x = torch.tensor([dataset.word2idx[w] for w in tokens]).unsqueeze(0)
     
