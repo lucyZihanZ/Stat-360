@@ -262,7 +262,7 @@ class TinyTransformer(nn.Module):
         x = self.embedding(x)  # (batch, seq_len, d_model)
         
         # 2. Add positional encoding using our sinusoidal implementation
-        x = self.pos_encoding(x)  # (batch, seq_len, d_model)
+        x += self.pos_encoding(x)  # (batch, seq_len, d_model)
         
         # 3. Attention block with residual
         attended = self.attention(x)
